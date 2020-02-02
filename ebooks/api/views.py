@@ -25,3 +25,18 @@ class EbookListCreateAPIViews(mixins.ListModelMixin,
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
+
+
+# create Concrete views class
+class EbookGenericListCreateAPIViews(generics.ListCreateAPIView):
+    # queryset are Has Namings Conventions
+    queryset = Ebook.objects.all()
+    # serializer_class has Naming Conventions
+    serializer_class = EbookSerializer
+
+# create Concrete views class with Crud
+class EbookDetailGenericListCreateAPIViews(generics.RetrieveDestroyAPIView):
+    # queryset are Has Namings Conventions
+    queryset = Ebook.objects.all()
+    # serializer_class has Naming Conventions
+    serializer_class = EbookSerializer
