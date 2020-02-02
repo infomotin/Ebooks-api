@@ -34,9 +34,16 @@ class EbookGenericListCreateAPIViews(generics.ListCreateAPIView):
     # serializer_class has Naming Conventions
     serializer_class = EbookSerializer
 
+
 # create Concrete views class with Crud
 class EbookDetailGenericListCreateAPIViews(generics.RetrieveDestroyAPIView):
     # queryset are Has Namings Conventions
     queryset = Ebook.objects.all()
     # serializer_class has Naming Conventions
     serializer_class = EbookSerializer
+
+
+class ReviewDetailAPIView(generics.ListCreateAPIView):
+    queryset = Review.objects.all()
+    # serializer_class has Naming Conventions
+    serializer_class = ReviewSerializer
